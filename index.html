@@ -15,7 +15,7 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:ital,wght@0,300;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <style>
-:root{--bg:#0f0f0f;--bg2:#171717;--bg3:#1f1f1f;--bg4:#272727;--border:#2e2e2e;--border2:#3a3a3a;--text:#e8e4dc;--text2:#9a9489;--text3:#5a5650;--cocina:#c8a96e;--bebidas:#7eb8c9;--ops:#a89fc8;--green:#7db87d;--red:#c87d7d;--gold:#c8a96e;--accent:#c8a96e;--r:10px;--r2:16px;font-family:'DM Sans',sans-serif}
+:root{--bg:#0f0f0f;--bg2:#171717;--bg3:#1f1f1f;--bg4:#272727;--border:#2e2e2e;--border2:#3a3a3a;--text:#e8e4dc;--text2:#9a9489;--text3:#5a5650;--cocina:#c8a96e;--bebidas:#7eb8c9;--ops:#a89fc8;--green:#7db87d;--red:#c87d7d;--gold:#ff5a5a;--accent:#ff5a5a;--brand-red:#cc0303;--r:10px;--r2:16px;font-family:'DM Sans',sans-serif}
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);color:var(--text);min-height:100vh}
 h1,h2,h3{font-family:'Fraunces',serif;font-weight:300}
@@ -70,7 +70,7 @@ h1,h2,h3{font-family:'Fraunces',serif;font-weight:300}
 .b-marketing{background:rgba(125,184,125,0.12);color:var(--green);border:1px solid rgba(125,184,125,0.25)}
 .b-pagada{background:rgba(125,184,125,0.12);color:var(--green);border:1px solid rgba(125,184,125,0.25)}
 .b-pendiente{background:rgba(200,125,125,0.12);color:var(--red);border:1px solid rgba(200,125,125,0.25)}
-.b-admin{background:rgba(200,169,110,0.15);color:var(--gold);border:1px solid rgba(200,169,110,0.3)}
+.b-admin{background:rgba(255,90,90,0.15);color:var(--gold);border:1px solid rgba(255,90,90,0.3)}
 .b-manager{background:rgba(126,184,201,0.15);color:var(--bebidas);border:1px solid rgba(126,184,201,0.3)}
 .b-empleado{background:rgba(168,159,200,0.15);color:var(--ops);border:1px solid rgba(168,159,200,0.3)}
 
@@ -85,7 +85,7 @@ h1,h2,h3{font-family:'Fraunces',serif;font-weight:300}
 /* BUTTONS */
 .btn{padding:8px 18px;border-radius:var(--r);border:1px solid var(--border2);background:var(--bg3);color:var(--text2);font-family:'DM Sans',sans-serif;font-size:0.82rem;cursor:pointer;transition:all 0.15s}
 .btn:hover{background:var(--bg4);color:var(--text)}
-.btn-primary{background:var(--accent);color:#0f0f0f;border-color:transparent;font-weight:500}
+.btn-primary{background:var(--brand-red);color:#fff;border-color:transparent;font-weight:500}
 .btn-primary:hover{opacity:0.88;color:#0f0f0f}
 .btn-sm{padding:5px 12px;font-size:0.78rem}
 .btn-export{background:var(--green);color:#0f0f0f;border-color:transparent;font-weight:500}
@@ -94,7 +94,7 @@ h1,h2,h3{font-family:'Fraunces',serif;font-weight:300}
 
 /* UPLOAD */
 .upload-zone{border:1px dashed var(--border2);border-radius:var(--r2);padding:2.5rem 1rem;text-align:center;cursor:pointer;transition:all 0.2s}
-.upload-zone:hover{border-color:var(--accent);background:rgba(200,169,110,0.04)}
+.upload-zone:hover{border-color:var(--accent);background:rgba(255,90,90,0.04)}
 .upload-zone input{display:none}
 
 /* TABLE */
@@ -216,7 +216,7 @@ tr:hover td{background:var(--bg3);color:var(--text)}
   transition:all 0.15s;border-radius:var(--r);flex:1;
 }
 .mob-btn:hover{background:var(--bg3);color:var(--text)}
-.mob-btn.active{color:var(--accent);background:rgba(200,169,110,0.08)}
+.mob-btn.active{color:var(--accent);background:rgba(255,90,90,0.08)}
 .mob-btn .icon{font-size:1.3rem;line-height:1}
 .mob-btn-pres{
   display:flex;flex-direction:column;align-items:center;gap:4px;
@@ -236,8 +236,8 @@ tr:hover td{background:var(--bg3);color:var(--text)}
 <!-- LOGIN -->
 <div id="login-screen" class="login-wrap">
   <div class="login-box">
-    <div class="login-logo">Control de Compras</div>
-    <div class="login-sub">Chateau Dog Care · Creatic Miami</div>
+    <img class="login-logo" src="./logo-chateau.png" alt="Château Dog Care" style="height:42px;width:auto;display:block">
+    <div class="login-sub">Control de Gastos · Creatic Miami</div>
     <div class="login-err" id="login-err">Email o contraseña incorrectos</div>
     <div class="field"><label>Email</label><input type="email" id="login-email" placeholder="tu@email.com" onkeydown="if(event.key==='Enter')doLogin()"></div>
     <div class="field"><label>Contraseña</label><input type="password" id="login-pass" placeholder="••••••••" onkeydown="if(event.key==='Enter')doLogin()"></div>
@@ -252,7 +252,7 @@ tr:hover td{background:var(--bg3);color:var(--text)}
   <!-- MOBILE HEADER -->
   <div class="mobile-header" style="display:none;background:var(--bg2);border-bottom:1px solid var(--border);padding:1rem;position:sticky;top:0;z-index:50" id="mobile-header">
     <div style="display:flex;justify-content:space-between;align-items:center">
-      <div style="font-family:'Fraunces',serif;font-size:1.1rem;color:var(--accent)">Control de Compras</div>
+      <div style="font-family:'Fraunces',serif;font-size:1.1rem;color:var(--accent)">Château Dog Care</div>
       <div style="display:flex;align-items:center;gap:10px">
         <span id="mob-user" style="font-size:0.75rem;color:var(--text3)"></span>
         <button onclick="doLogout()" style="background:none;border:none;color:var(--text3);font-size:0.75rem;cursor:pointer;font-family:'DM Sans',sans-serif">Salir</button>
@@ -260,7 +260,7 @@ tr:hover td{background:var(--bg3);color:var(--text)}
     </div>
   </div>
 <aside class="sidebar">
-    <div class="logo">Control de Gastos<span>Chateau Dog Care</span></div>
+    <div class="logo"><img src="./logo-chateau.png" alt="Château Dog Care" style="height:30px;width:auto;display:block"><span>Control de Gastos</span></div>
     <div class="user-chip">
       <div id="user-name" style="font-weight:500;font-size:0.83rem;margin-bottom:3px"></div>
       <div class="role" id="user-role-badge"></div>
@@ -841,7 +841,7 @@ function renderPresupuesto(){
   });
 
   document.getElementById('pres-alertas').innerHTML = alertas.map(a=>`
-    <div style="background:${a.tipo==='danger'?'rgba(200,125,125,0.1)':'rgba(200,169,110,0.1)'};border:1px solid ${a.tipo==='danger'?'rgba(200,125,125,0.3)':'rgba(200,169,110,0.3)'};border-radius:var(--r);padding:10px 14px;font-size:0.83rem;margin-bottom:8px;color:${a.tipo==='danger'?'var(--red)':'var(--gold)'}">
+    <div style="background:${a.tipo==='danger'?'rgba(200,125,125,0.1)':'rgba(255,90,90,0.1)'};border:1px solid ${a.tipo==='danger'?'rgba(200,125,125,0.3)':'rgba(255,90,90,0.3)'};border-radius:var(--r);padding:10px 14px;font-size:0.83rem;margin-bottom:8px;color:${a.tipo==='danger'?'var(--red)':'var(--gold)'}">
       ${a.msg}
     </div>`).join('');
 
@@ -880,7 +880,7 @@ function renderPresupuesto(){
         </div>`;
     });
     if(sinCategoria>0){
-      barrasHTML+=`<div style="margin-bottom:8px;padding-left:12px;padding:8px 12px;background:rgba(200,169,110,0.05);border-radius:6px;margin-top:4px">
+      barrasHTML+=`<div style="margin-bottom:8px;padding-left:12px;padding:8px 12px;background:rgba(255,90,90,0.05);border-radius:6px;margin-top:4px">
         <div style="display:flex;justify-content:space-between;font-size:0.78rem">
           <span style="color:var(--gold)">⚠ Sin categoría asignada</span>
           <span style="font-family:'DM Mono',monospace;font-size:0.72rem;color:var(--gold)">${fmt$(sinCategoria)}</span>
@@ -1532,7 +1532,7 @@ function exportarExcel(){
     const p=list.filter(f=>f.estado==='Pendiente');
     addSheet('Pendientes',[['Fecha','Proveedor','Factura','Centro','Descripción','Monto','Pago'],...p.map(f=>[f.fecha,f.proveedor,f.numero,f.centro,f.descripcion,f.monto,f.pago]),['','','','','TOTAL',p.reduce((s,f)=>s+(f.monto||0),0),'']],[12,24,14,14,30,12,14]);
   }
-  XLSX.writeFile(wb,`Compras_${desde}_${hasta}.xlsx`);
+  XLSX.writeFile(wb,`Gastos_${desde}_${hasta}.xlsx`);
   toast('Excel descargado');
 }
 
